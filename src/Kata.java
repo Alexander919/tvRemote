@@ -1,14 +1,15 @@
 public class Kata {
     public static int tvRemote(final String word) {
-        // start with col = 0; lastCol = 0; row = 0;
+        //declare col = 0; lastCol = 0; row = 0; lastRow = 0; count = 0
+        //loop
         //find the index of the letter
         //calculate row and column of the letter (row: index / 8; col: index % 8)
-        //add row to count
+        //add Math.abs(row - lastRow) to count
         //add Math.abs(col - lastCol) to count
-        //update lastCol with col value
-        //repeat
+        //update lastCol with col and lastRow with row value
+        //end loop
         String kb = "abcde123fghij456klmno789pqrst.@0uvwxyz_/";
-        int col = 0, lastCol = 0, row = 0, lastRow = 0, count = 0;
+        int col, lastCol = 0, row, lastRow = 0, count = 0;
         for (String letter : word.split("")) {
             int inx = kb.indexOf(letter);
             col = inx % 8;
